@@ -4,7 +4,7 @@
 import web
 
 urls = (
-    "/.*", "hello"
+    "/.*", "hello",
     "/detail", "detail"
 )
 app = web.application(urls, globals())
