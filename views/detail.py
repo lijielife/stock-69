@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import Blueprint
+from application import route
 
-detail_blueprint = Blueprint('detail', __name__, template_folder='templates')
-
-@detail_blueprint.route('/detail')
+@route('/detail')
 def detail():
     return 'detail'
         

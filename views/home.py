@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import render_template, Blueprint
+from application import route
+from flask import render_template
 
-home_blueprint = Blueprint('home', __name__, template_folder='templates')
-
-@home_blueprint.route('/')
+@route('/')
 def home():
     return render_template("index.html")
         

@@ -1,14 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from views import views
-from flask import Flask
+from application import app
+import views
 
-
-app = Flask(__name__)
 app.debug = True
-
-for view in views:
-    app.register_blueprint(view)
 
 if __name__ == '__main__':
     app.run()

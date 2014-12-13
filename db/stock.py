@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from sqlalchemy import Column, String, Numeric
-from db import Base
+from db import Base, db_session
 
 class Stock(Base):
     __tablename__ = 'stocks'
@@ -17,6 +17,7 @@ class Stock(Base):
         self.industry = industry
 
     def __repr__(self):
-        return '<Stock %r>' % (self.name)
+        return '<Stock sid=%s, name=%s>' % (self.sid, self.name)
 
-print Stock(sid='123', name='SZ', price=12.55, industry='abc')
+s = Stock(sid='123', name='abc', price='15.01', industry='bb')
+print Stock.query.all()
