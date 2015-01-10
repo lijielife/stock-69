@@ -1,14 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
-engine = create_engine('mysql://root:@localhost/stock', convert_unicode=True)
-
-db_session = scoped_session(sessionmaker(autocommit=False,
-                                         autoflush=False,
-                                         bind=engine))
-
+engine = create_engine('mysql://stock:zaq12wsx@localhost/stock?charset=utf8', convert_unicode=True, echo=True)
 Base = declarative_base()
-Base.query = db_session.query_property()
+Session = sessionmaker(bind=engine)
