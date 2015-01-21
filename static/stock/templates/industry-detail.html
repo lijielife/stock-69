@@ -1,4 +1,5 @@
-<ion-view view-title="{{industry.name}}">
+<ion-view>
+  <ion-nav-title>{{industry.name}}</ion-nav-title>
   <ion-content class="padding">
     <div class="list card">
       <a ng-repeat="stock in industry.stocks" href="#/tab/stock/{{stock.code}}">

@@ -11,11 +11,13 @@ angular.module('starter.controllers', [])
 })
 
 .controller('IndustryDetailCtrl', function($scope, $stateParams, $http) {
+	$scope.title = "aa";
 	var url = '/industry/' + $stateParams.icode;
     $http.get(url)
     .success(function(data) {
         if(data){
             $scope.industry = data;
+            $scope.title = data.name;
         }
     })
 })
