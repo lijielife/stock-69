@@ -1,0 +1,9 @@
+<ion-view view-title="{{industry.name}}">
+  <ion-content class="padding">
+    <div class="list card">
+      <a ng-repeat="stock in industry.stocks" href="#/tab/stock/{{stock.code}}">
+        <div ng-class-odd="'item item-odd'" ng-class-even="'item item-even'">{{stock.name}}({{stock.code}})   ￥{{stock.price}}</div>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import Flask
+from flask.ext.api import FlaskAPI
 
-app = Flask(__name__)
+app = FlaskAPI(__name__)
 route = app.route

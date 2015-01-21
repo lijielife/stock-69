@@ -1,0 +1,9 @@
+<ion-view view-title="行业列表">
+  <ion-content class="padding">
+    <div class="list card">
+      <a ng-repeat="industry in industrys" href="#/tab/detail/{{industry.icode}}">
+        <div ng-class-odd="'item item-odd'" ng-class-even="'item item-even'">{{industry.name}}</div>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
