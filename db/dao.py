@@ -25,10 +25,12 @@ def industrys():
 
 def industry(icode, sortField):
     with engine.connect() as conn:
+        sf = sortField
         if sortField != 'pe_lyr' and sortField != 'pe_ttm' and sortField != 'pb' and sortField != 'psr':
-            sortField = 'pe_lyr'
+            sf = 'pe_lyr'
               
-        cmd = 'select s.*,i.name as iname from stock s, industry i where s.icode = i.code and s.icode = :code order by ' + sortField
+        cmd = 'select s.*,i.name as iname from stock s, industry i where s.icode = i.code and s.icode = :code and ' + sf + ' is not null order by ' + sf
+        print cmd
         result = conn.execute(text(cmd),
                               code=icode)
         
