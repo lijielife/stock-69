@@ -17,16 +17,21 @@ angular.module('starter.controllers', [])
 	}
 	
 	var sortDetail = '';
+	var sfn = '';
 	if(sortField == 'pe_lyr'){
-		sortDetail = '排序规则：[市盈率(PE)LYR]越低越靠前';
+		sfn = '市盈率(PE)LYR';
+		sortDetail = '当前排序规则：【市盈率(PE)LYR】'; 
 	} else if(sortField == 'pe_ttm'){
-		sortDetail = '排序规则：[市盈率(PE)TTM]越低越靠前';
+		sfn = '市盈率(PE)TTM';
+		sortDetail = '当前排序规则：【市盈率(PE)TTM】';
 	} else if(sortField == 'pb'){
-		sortDetail = '排序规则：[市净率(PB)TTM]越低越靠前';
+		sfn = '市净率(PB)TTM';
+		sortDetail = '当前排序规则：【市净率(PB)TTM】';
 	} else if(sortField == 'psr'){
-		sortDetail = '排序规则：[市销率(PSR)TTM]越低越靠前';
+		sfn = '市销率(PSR)TTM';
+		sortDetail = '当前排序规则：【市销率(PSR)TTM】';
 	}
-	
+	$scope.sfn = sfn;
 	$rootScope.sortDetail = sortDetail;
 	
 	var url = '/industry/' + $stateParams.icode + '/' + sortField;

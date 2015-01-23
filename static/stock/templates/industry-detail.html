@@ -3,8 +3,9 @@
   <ion-content class="padding">
     <div style="text-align:center;padding-top:12px;">{{sortDetail}}</div>
     <div class="list card">
+      <div class="item item-even" style="background-color: #c1c1c1;color:#111;font-weight:bold;"><span style="display:inline-block;width:170px;">股票名称(代码)</span><span style="display:inline-block;width:140px;">{{sfn}}</span></div>
       <a ng-repeat="stock in industry.stocks" href="#/tab/stock/{{stock.code}}">
-        <div ng-class-odd="'item item-odd'" ng-class-even="'item item-even'">{{stock.name}}({{stock.code}})   ￥{{stock.price}}</div>
+        <div ng-class-odd="'item item-odd'" ng-class-even="'item item-even'"><span style="display:inline-block;width:185px;">{{stock.name}}({{stock.code}})</span><span style="display:inline-block;width:140px;">{{stock.sf}}</span>></div>
       </a>
     </div>
   </ion-content>

@@ -30,7 +30,6 @@ def industry(icode, sortField):
             sf = 'pe_lyr'
               
         cmd = 'select s.*,i.name as iname from stock s, industry i where s.icode = i.code and s.icode = :code and ' + sf + ' is not null order by ' + sf
-        print cmd
         result = conn.execute(text(cmd),
                               code=icode)
         
@@ -43,6 +42,7 @@ def industry(icode, sortField):
                 ids['name'] = row['name']
                 ids['iname'] = row['iname']
                 ids['price'] = row['price'].to_eng_string()
+                ids['sf'] = '--' if not row[sf] else row[sf].to_eng_string()
               
                 rows.append(ids)
 
