@@ -1,10 +1,22 @@
 <ion-view view-title="{{stock.name}}">
+  <ion-nav-bar>
+    <ion-nav-back-button>{{stock.iname}}</ion-nav-back-button>
+  </ion-nav-bar>
   <ion-nav-title>{{stock.name}}</ion-nav-title>
   <ion-content class="padding">
     <div class="list card">
-      <div class="item item-odd">名字：{{stock.name}}</div>
-      <div class="item item-even">代码：{{stock.code}}</div>
-      <div class="item item-odd">价格：￥{{stock.price}}</div>
+      <div class="item item-even"><span>代码：</span><span>{{stock.code}}</span></div>
+      <div class="item item-odd"><span>价格：</span><span>{{stock.price}}</span></div>
+      <div class="item item-even"><span>总市值：</span><span>{{stock.total_amount}}亿</span></div>
+      <div class="item item-odd"><span>总股本：</span><span>{{stock.totalShares}}</span></div>
+      <div class="item item-even"><span>流通股本：</span><span>{{stock.float_shares}}</span></div>
+      <div class="item item-odd"><span>每股收益：</span><span>{{stock.eps}}</span></div>
+      <div class="item item-even"><span>每股股息：</span><span>{{stock.dividend}}</span></div>
+      <div class="item item-odd"><span>每股净资产：</span><span>{{stock.net_assets}}</span></div>
+      <div class="item item-even"><span>市盈率LYR：</span><span>{{stock.pe_lyr}}</span></div>
+      <div class="item item-odd"><span>市盈率TTM：</span><span>{{stock.pe_ttm}}</span></div>
+      <div class="item item-even"><span>市净率TTM：</span><span>{{stock.pb}}</span></div>
+      <div class="item item-odd"><span>市销率TTM：</span><span>{{stock.psr}}</span></div>
     </div>
   </ion-content>
 </ion-view>

@@ -1,6 +1,7 @@
 <ion-view>
   <ion-nav-title>{{industry.name}}</ion-nav-title>
   <ion-content class="padding">
+    <div style="text-align:center;padding-top:12px;">{{sortDetail}}</div>
     <div class="list card">
       <a ng-repeat="stock in industry.stocks" href="#/tab/stock/{{stock.code}}">
         <div ng-class-odd="'item item-odd'" ng-class-even="'item item-even'">{{stock.name}}({{stock.code}})   ￥{{stock.price}}</div>

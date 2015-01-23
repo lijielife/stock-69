@@ -1,14 +1,24 @@
-<ion-view view-title="行业股票排序规则">
-  <ion-content>
-    <div class="list">
+<ion-view view-title="行业股票排序字段">
+  <ion-content >
+    <div class="list" ng-controller="SortFieldSelectCtrl">
 	  <label class="item item-radio">
-	    <input type="radio" name="group">
-	    <div class="item-content">低市盈率PE</div>
+	    <input type="radio" name="sf" ng-click="click($event)" value="pe_lyr">
+	    <div class="item-content">市盈率(PE)LYR</div>
 	    <i class="radio-icon ion-checkmark"></i>
 	  </label>
 	  <label class="item item-radio">
-        <input type="radio" name="group">
-        <div class="item-content">低市净率PB</div>
+        <input type="radio" name="sf" ng-click="click($event)" value="pe_ttm">
+        <div class="item-content">市盈率(PE)TTM</div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+	  <label class="item item-radio">
+        <input type="radio" name="sf" ng-click="click($event)" value="pb">
+        <div class="item-content">市净率(PB)TTM</div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+	  <label class="item item-radio">
+        <input type="radio" name="sf" ng-click="click($event)" value="psr">
+        <div class="item-content">市销率(PSR)TTM</div>
         <i class="radio-icon ion-checkmark"></i>
       </label>
     </div>
