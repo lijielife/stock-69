@@ -1,9 +1,14 @@
 <ion-view view-title="{{stock.name}}">
   <ion-nav-bar>
-    <ion-nav-back-button>{{stock.iname}}</ion-nav-back-button>
+    <ion-nav-back-button style="color:#444;">{{stock.iname}}</ion-nav-back-button>
   </ion-nav-bar>
   <ion-nav-title>{{stock.name}}</ion-nav-title>
-  <ion-content class="padding">
+  <ion-content class="padding" ng-controller="StarSelectCtrl">
+    <div style="text-align:right;">
+      <a ng-click="click($event)">
+        <span id="{{stock.code}},{{stock.name}}" class="icon {{starIcon}}">{{starTxt}}</span>
+      </a>
+    </div>
     <div class="list card">
       <div class="item item-even"><span>代码：</span><span>{{stock.code}}</span></div>
       <div class="item item-odd"><span>价格：</span><span>{{stock.price}}</span></div>

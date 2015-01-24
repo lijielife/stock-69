@@ -2,3 +2,12 @@
   <ion-content class="padding">
   </ion-content>
 </ion-view>
+<ion-view view-title="收藏列表">
+  <ion-content class="padding">
+    <div class="list card">
+      <a ng-repeat="stock in stars" href="#/tab/stock/{{stock.code}}">
+        <div ng-class-odd="'item item-odd'" ng-class-even="'item item-even'"><span style="display:inline-block;width:170px;">{{stock.name}}({{stock.code}})</span><span style="display:inline-block;width:90px;"></span>></div>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

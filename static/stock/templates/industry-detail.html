@@ -1,7 +1,8 @@
 <ion-view>
   <ion-nav-title>{{industry.name}}</ion-nav-title>
   <ion-content class="padding">
-    <div style="text-align:center;padding-top:12px;">{{sortDetail}}</div>
+    <div style="text-align:center;padding-top:10px;">当前排序规则【{{sfn}}】</div>
+    <div style="text-align:center;">(值越小股票价值越高)</div>
     <div class="list card">
       <div class="item item-even" style="background-color: #c1c1c1;color:#111;font-weight:bold;"><span style="display:inline-block;width:150px;">股票名称(代码)</span><span style="display:inline-block;width:130px;">{{sfn}}</span></div>
       <a ng-repeat="stock in industry.stocks" href="#/tab/stock/{{stock.code}}">

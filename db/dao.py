@@ -61,7 +61,7 @@ def stock(code):
             if row['code'] != "" and row['name'] != "":
                 ids['code'] = row['code']
                 ids['name'] = row['name']
-                ids['iname'] = row['iname'] if len(row['iname']) <= 5 else row['iname'][0:5] + '...'
+                ids['iname'] = row['iname'] if len(row['iname']) <= 4 else row['iname'][0:4] + '...'
                 ids['price'] = row['price'].to_eng_string()
                 ids['total_amount'] = (int(row['totalShares']) * row['price'] / 100000000).to_integral().to_eng_string()
                 ids['totalShares'] = row['totalShares']
