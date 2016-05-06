@@ -1,0 +1,13 @@
+<ion-view>
+  <ion-nav-title>返回</ion-nav-title>
+  <ion-content class="padding">
+    <div style="text-align:center;padding-top:10px;">当前排序规则【{{sfn}}】</div>
+    <div style="text-align:center;">全局列表(值越小股票价值越高)</div>
+    <div class="list card">
+      <div class="item item-even" style="background-color: #c1c1c1;color:#111;font-weight:bold;"><span style="display:inline-block;width:150px;">股票名称(代码)</span><span style="display:inline-block;width:130px;">{{sfn}}</span></div>
+      <a ng-repeat="stock in stocks" href="#/tab/stock/{{stock.code}}">
+        <div ng-class-odd="'item item-odd'" ng-class-even="'item item-even'"><span style="display:inline-block;width:170px;">{{stock.name}}({{stock.code}})</span><span style="display:inline-block;width:90px;">{{stock.sf}}</span>></div>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

@@ -38,6 +38,33 @@ angular.module('starter.controllers', [])
     })
 })
 
+.controller('StocksCtrl', function($scope, $rootScope, $stateParams, $http) {
+	var sortField = $rootScope.sortField;
+	if(!sortField){
+		sortField = 'pe_lyr';
+	}
+	
+	var sfn = '';
+	if(sortField == 'pe_lyr'){
+		sfn = '市盈率(PE)LYR';
+	} else if(sortField == 'pe_ttm'){
+		sfn = '市盈率(PE)TTM';
+	} else if(sortField == 'pb'){
+		sfn = '市净率(PB)TTM';
+	} else if(sortField == 'psr'){
+		sfn = '市销率(PSR)TTM';
+	}
+	$scope.sfn = sfn;
+	
+	var url = '/stocks/' + sortField;
+    $http.get(url)
+    .success(function(data) {
+        if(data){
+            $scope.stocks = data;
+        }
+    })
+})
+
 .controller('StockCtrl', function($scope, $rootScope, $stateParams, $http) {
 	var url = '/stock/' + $stateParams.code;
     $http.get(url)

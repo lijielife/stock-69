@@ -47,7 +47,29 @@ def industry(icode, sortField):
                 rows.append(ids)
 
         return rows
-    
+
+def stocks(sortField):
+    with engine.connect() as conn:
+        sf = sortField
+        if sortField != 'pe_lyr' and sortField != 'pe_ttm' and sortField != 'pb' and sortField != 'psr':
+            sf = 'pe_lyr'
+              
+        cmd = 'select * from stock where ' + sf + ' is not null order by ' + sf + ' limit 50'
+        result = conn.execute(text(cmd))
+        
+        rows = []
+        for row in result:
+            ids = dict()
+            
+            if row['code'] != "" and row['name'] != "":
+                ids['code'] = row['code']
+                ids['name'] = row['name']
+                ids['price'] = row['price'].to_eng_string()
+                ids['sf'] = '--' if not row[sf] else row[sf].to_eng_string()
+              
+                rows.append(ids)
+
+        return rows    
     
 def stock(code):
     with engine.connect() as conn:

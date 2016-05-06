@@ -41,6 +41,17 @@ angular.module('starter', [ 'ionic', 'starter.controllers' ])
 			}
 		}
 	})
+	
+	.state('tab.stocks', {
+		url : '/stocks',
+		cache: false,
+		views : {
+			'tab-stocks' : {
+				templateUrl : 'templates/tab-stocks.html',
+				controller : 'StocksCtrl'
+			}
+		}
+	})
 
 	.state('tab.bookmarks', {
 		url : '/bookmarks',
