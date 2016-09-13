@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import json, time, urllib2
+import json, time, urllib2, datetime
 from urllib2 import URLError
 from db import dao
 from db.dao import save_stock
@@ -43,6 +43,6 @@ def scan():
                         
                         save_stock(item)
         except URLError, e:
-            print e.reason
+            print datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + e.reason
                     
 scan()
