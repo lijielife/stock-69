@@ -43,6 +43,6 @@ def scan():
                         
                         save_stock(item)
         except URLError, e:
-            print datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + e.reason
+            print "%s - url(%s) - %s" % (datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S"), url, e.reason)
                     
 scan()
